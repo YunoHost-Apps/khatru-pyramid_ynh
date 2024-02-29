@@ -1,0 +1,24 @@
+#!/bin/bash
+
+source _common.sh
+source /usr/share/yunohost/helpers
+
+ynh_script_progression --message="Stopping $app's systemd service..." --weight=1
+
+ynh_systemd_action --service_name="$app" --action="stop" --log_path="/var/log/$app/$app.log"
+ynh_script_progression --message="Upgrading source files..." --weight=1
+
+# Download, check integrity, uncompress and patch the source from manifest.toml
+ynh_setup_source --dest_dir="$install_dir"
+
+chown -R $app:$app $install_dir
+chmod -R 700 $install_dir
+
+ynh_script_progression --message="Add system configurations" --weight=1
+ynh_add_nginx_config
+ynh_add_systemd_config
+yunohost service add "$app" --description="Khatru Pyramid" --log="/var/log/$app.log"
+
+ynh_script_progression --message="Starting $app's systemd service..." --weight=1
+ynh_systemd_action --service_name="$app" --action="start" --log_path="/var/log/$app.log"
+
