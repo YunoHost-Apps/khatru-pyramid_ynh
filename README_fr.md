@@ -18,7 +18,7 @@ Si vous n’avez pas YunoHost, regardez [ici](https://yunohost.org/#/install) po
 
 # Khatru Pyramid
 
-A nostr relay with a invite hierarchy.
+A [nostr](https://github.com/nostr-protocol/nostr) relay with a invite hierarchy.
 
 
 
