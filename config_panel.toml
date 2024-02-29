@@ -1,0 +1,31 @@
+version = "1.0"
+
+[main]
+services = ["__APP__"]
+[main.settings]
+name = ""
+
+[main.settings.relay_name]
+bind = ":/var/www/__APP__/khatru-pyramid.env"
+ask.en = "Name for the relay"
+type = "string"
+
+[main.settings.relay_pubkey]
+bind = ":/var/www/__APP__/khatru-pyramid.env"
+ask.en = "Pubkey for the relay (your nostr hex pubkey)"
+type = "string"
+
+[main.settings.relay_contact]
+bind = ":/var/www/__APP__/khatru-pyramid.env"
+ask.en = "Alternative contact like email for the relay"
+type = "string"
+
+[main.settings.relay_description]
+bind = ":/var/www/__APP__/khatru-pyramid.env"
+ask.en = "Description for the relay"
+type = "string"
+
+[main.settings.relay_maxinvites]
+bind = "MAX_INVITES_PER_PERSON:/var/www/__APP__/khatru-pyramid.env"
+ask.en = "Max invites per person"
+type = "number"

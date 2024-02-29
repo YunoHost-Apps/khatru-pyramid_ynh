@@ -1,13 +1,8 @@
 #!/bin/bash
 
-#=================================================
-
-#source _common.sh
+source _common.sh
 source /usr/share/yunohost/helpers
 
-#=================================================
-# REMOVE SYSTEM CONFIGURATIONS
-#=================================================
 ynh_script_progression --message="Removing system configurations related to $app..." --weight=1
 
 if ynh_exec_warn_less yunohost service status "$app" >/dev/null
@@ -22,3 +17,4 @@ ynh_remove_nginx_config
 
 ynh_secure_remove --file="/var/log/$app"
 
+ynh_script_progression --message="Removal of $app completed" --last

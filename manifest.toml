@@ -9,7 +9,7 @@ version = "0.0.5~ynh1"
 maintainers = ["tijlxyz"]
 
 [upstream]
-license = "MIT" # todo
+license = "MIT"
 code = "https://github.com/github-tijlxyz/khatru-pyramid"
 
 [integration]
@@ -22,7 +22,7 @@ ldap = "not_relevant"
 sso = "not_relevant"
 disk = "100M"
 ram.build = "100M"
-ram.runtime = "100M"
+ram.runtime = "50M"
 
 
 [install]
@@ -38,9 +38,8 @@ ram.runtime = "100M"
     type = "string"
 
     [install.relay_pubkey]
-    ask.en = "Pubkey for the relay"
+    ask.en = "Pubkey for the relay (your nostr hex pubkey)"
     type = "string"
-
 
 [resources]
 
@@ -51,15 +50,14 @@ ram.runtime = "100M"
     amd64.url = "https://github.com/github-tijlxyz/khatru-pyramid/releases/download/v0.0.5/khatru-pyramid-v0.0.5-linux-amd64"
     amd64.sha256 = "4c945549c9ef25284d9453557aab22586bb88a87d5fb6c83e125a9af550f766c"
 
-    # autoupdate.asset.amd64 = "^khatru-pyramid-v.*-linux-amd64$"
-    # autoupdate.strategy = "latest_github_release"
+    autoupdate.asset.amd64 = "^khatru-pyramid-v.*-linux-amd64$"
+    autoupdate.strategy = "latest_github_release"
 
     [resources.system_user]
 
     [resources.data_dir]
 
     [resources.install_dir]
-    # dir = "/opt/yunohost/__APP__"
 
     [resources.ports]
     main.default = 3334
@@ -67,6 +65,4 @@ ram.runtime = "100M"
     [resources.permissions]
     main.url = "/"
     main.allowed = "visitors"
-    # main.protected = true
-    # main.show_tile = true
 

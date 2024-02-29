@@ -15,7 +15,7 @@ User=__APP__
 Group=__APP__
 WorkingDirectory=__INSTALL_DIR__/
 ExecStart=__INSTALL_DIR__/khatru-pyramid-bin
-StandardOutput=append:/var/log/__APP__/__APP__.log
+StandardOutput=/var/log/__APP__.log
 StandardError=inherit
 Environment=USER=__APP__ HOME=/home/yunohost.app/__APP__
 EnvironmentFile=__INSTALL_DIR__/khatru-pyramid.env
