@@ -7,20 +7,20 @@ ynh_script_progression --message="Restoring the app main directory..." --weight=
 ynh_restore_file --origin_path="$install_dir"
 
 chown -R $app:$app $install_dir
-chmood -R 700 $install_dir
+# chmod -R 700 $install_dir
 
 ynh_script_progression --message="Restoring system configurations related to $app..." --weight=1
 
 ynh_restore_file --origin_path="/etc/systemd/system/$app.service"
 systemctl enable "$app.service" --quiet
 
-yunohost service add "$app" --description="Khatru Pyramid" --log="/var/log/$app.log"
+yunohost service add "$app" --description="Khatru Pyramid" --log="/var/log/$app/$app.log"
 
 ynh_restore_file --origin_path="/etc/logrotate.d/$app"
 
 ynh_script_progression --message="Reloading NGINX web server and $app's service..." --weight=1
 
-ynh_systemd_action --service_name="$app" --action="start" --log_path="/var/log/$app.log"
+ynh_systemd_action --service_name="$app" --action="start" --log_path="/var/log/$app/$app.log"
 
 ynh_systemd_action --service_name=nginx --action=reload
 
