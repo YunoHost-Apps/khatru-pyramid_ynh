@@ -1,0 +1,22 @@
+#!/bin/bash
+
+source /usr/share/yunohost/helpers
+
+ynh_app_setting_set --app="$app" --key=domain --value="$domain"
+ynh_app_setting_set --app="$app" --key=relay_name --value="$relay_name"
+ynh_app_setting_set --app="$app" --key=relay_pubkey --value="$relay_pubkey"
+
+ynh_setup_source --dest_dir="$install_dir" 
+
+ynh_script_progression --message="Add system configurations" --weight=1
+
+ynh_add_nginx_config
+
+ynh_add_config --template='khatru-pyramid.env' --destination="$install_dir/khatru-pyramid.env"
+
+ynh_add_systemd_config
+
+yunohost service add "$app" --description="Khatru Pyramid" --log="/var/log/$app/$app.log"
+
+ynh_systemd_action --service_name="$app" --action="start" --log_path="/var/log/$app/$app.log"
+
