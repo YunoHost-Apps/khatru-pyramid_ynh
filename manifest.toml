@@ -9,7 +9,7 @@ version = "0.0.5~ynh1"
 maintainers = ["tijlxyz"]
 
 [upstream]
-license = "MIT"
+license = "Unlicense"
 code = "https://github.com/github-tijlxyz/khatru-pyramid"
 
 [integration]
@@ -26,43 +26,43 @@ ram.runtime = "50M"
 
 
 [install]
-    [install.domain]
-    type = "domain"
+[install.domain]
+type = "domain"
 
-    [install.path]
-    type = "path"
-    default = "/khatru-pyramid"
+[install.path]
+type = "path"
+default = "/khatru-pyramid"
 
-    [install.relay_name]
-    ask.en = "Name for the relay"
-    type = "string"
+[install.relay_name]
+ask.en = "Name for the relay"
+type = "string"
 
-    [install.relay_pubkey]
-    ask.en = "Pubkey for the relay (your nostr hex pubkey)"
-    type = "string"
+[install.relay_pubkey]
+ask.en = "Pubkey for the relay (your nostr hex pubkey)"
+type = "string"
 
 [resources]
 
-    [resources.sources.main]
-    extract = false
-    rename = "khatru-pyramid-bin"
+[resources.sources.main]
+extract = false
+rename = "khatru-pyramid-bin"
 
-    amd64.url = "https://github.com/github-tijlxyz/khatru-pyramid/releases/download/v0.0.5/khatru-pyramid-v0.0.5-linux-amd64"
-    amd64.sha256 = "4c945549c9ef25284d9453557aab22586bb88a87d5fb6c83e125a9af550f766c"
+amd64.url = "https://github.com/github-tijlxyz/khatru-pyramid/releases/download/v0.0.5/khatru-pyramid-v0.0.5-linux-amd64"
+amd64.sha256 = "4c945549c9ef25284d9453557aab22586bb88a87d5fb6c83e125a9af550f766c"
 
-    autoupdate.asset.amd64 = "^khatru-pyramid-v.*-linux-amd64$"
-    autoupdate.strategy = "latest_github_release"
+autoupdate.asset.amd64 = "^khatru-pyramid-v.*-linux-amd64$"
+autoupdate.strategy = "latest_github_release"
 
-    [resources.system_user]
+[resources.system_user]
 
-    [resources.data_dir]
+[resources.data_dir]
 
-    [resources.install_dir]
+[resources.install_dir]
 
-    [resources.ports]
-    main.default = 3334
+[resources.ports]
+main.default = 3334
 
-    [resources.permissions]
-    main.url = "/"
-    main.allowed = "visitors"
+[resources.permissions]
+main.url = "/"
+main.allowed = "visitors"
 

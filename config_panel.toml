@@ -29,3 +29,4 @@ type = "string"
 bind = "MAX_INVITES_PER_PERSON:/var/www/__APP__/khatru-pyramid.env"
 ask.en = "Max invites per person"
 type = "number"
+
