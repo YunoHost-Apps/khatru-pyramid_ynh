@@ -2,7 +2,7 @@ packaging_format = 2
 
 id = "khatru-pyramid"
 name = "Khatru Pyramid"
-description.en = "A nostr invite relay"
+description.en = "Nostr invite relay"
 
 version = "0.0.5~ynh1"
 
@@ -59,4 +59,3 @@ main.default = 3334
 [resources.permissions]
 main.url = "/"
 main.allowed = "visitors"
-
