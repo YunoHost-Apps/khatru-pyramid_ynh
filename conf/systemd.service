@@ -9,14 +9,13 @@ After=network.target nginx.service
 
 [Service]
 Type=exec
-Restart=on-failure
-
 User=__APP__
 Group=__APP__
-WorkingDirectory=__INSTALL_DIR__/
-ExecStart=__INSTALL_DIR__/khatru-pyramid-bin
-Environment=USER=__APP__ HOME=/home/yunohost.app/__APP__
 EnvironmentFile=__INSTALL_DIR__/khatru-pyramid.env
+WorkingDirectory=__INSTALL_DIR__/
+ExecStart=__INSTALL_DIR__/khatru-pyramid
+#Environment=USER=__APP__ HOME=__DATA_DIR__
+Restart=on-failure
 
 # Sandboxing options to harden security
 # Depending on specificities of your service/app, you may need to tweak these 
