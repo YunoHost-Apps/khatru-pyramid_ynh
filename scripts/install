@@ -1,30 +1,60 @@
 #!/bin/bash
 
+#=================================================
+# IMPORT GENERIC HELPERS
+#=================================================
+
+source _common.sh
 source /usr/share/yunohost/helpers
+
+#=================================================
+# INITIALIZE AND STORE SETTINGS
+#=================================================
 
 relay_maxinvites="3"
 relay_description=""
 relay_contact=""
 relay_icon=""
 
-ynh_app_setting_set --app="$app" --key=relay_maxinvites --value="$relay_maxinvites"
-ynh_app_setting_set --app="$app" --key=relay_description --value="$relay_description"
-ynh_app_setting_set --app="$app" --key=relay_contact --value="$relay_contact"
-ynh_app_setting_set --app="$app" --key=relay_icon --value="$relay_icon"
+ynh_app_setting_set --key=relay_maxinvites --value="$relay_maxinvites"
+ynh_app_setting_set --key=relay_description --value="$relay_description"
+ynh_app_setting_set --key=relay_contact --value="$relay_contact"
+ynh_app_setting_set --key=relay_icon --value="$relay_icon"
 
-ynh_script_progression --message="Setting up source files..." --weight=1
-ynh_setup_source --dest_dir="$install_dir" 
-chown -R $app:$app $install_dir
-chmod -R 700 $install_dir
+#=================================================
+# DOWNLOAD, CHECK AND UNPACK SOURCE
+#=================================================
+ynh_script_progression "Setting up source files..."
 
-ynh_script_progression --message="Adding $app's configuration files..." --weight=1
-ynh_add_config --template='khatru-pyramid.env' --destination="$install_dir/khatru-pyramid.env"
+ynh_setup_source --dest_dir="$install_dir"
 
-ynh_script_progression --message="Add system configurations" --weight=1
-ynh_add_nginx_config
-ynh_add_systemd_config
+#=================================================
+# APP INITIAL CONFIGURATION
+#=================================================
+ynh_script_progression "Adding $app's configuration files..."
+
+ynh_config_add --template='khatru-pyramid.env' --destination="$install_dir/khatru-pyramid.env"
+
+#=================================================
+# SYSTEM CONFIGURATION
+#=================================================
+ynh_script_progression "Adding system configurations related to $app..."
+
+ynh_config_add_nginx
+
+ynh_config_add_systemd
+
 yunohost service add "$app" --description="Khatru Pyramid" --log="/var/log/$app/$app.log"
 
-ynh_script_progression --message="Starting $app's systemd service..." --weight=1
-ynh_systemd_action --service_name="$app" --action="start" --log_path="/var/log/$app/$app.log"
+#=================================================
+# START SYSTEMD SERVICE
+#=================================================
+ynh_script_progression "Starting $app's systemd service..."
 
+ynh_systemctl --service="$app" --action="start"
+
+#=================================================
+# END OF SCRIPT
+#=================================================
+
+ynh_script_progression "Installation of $app completed"

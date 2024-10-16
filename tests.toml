@@ -1,3 +1,10 @@
 test_format = 1.0
 
 [default]
+
+    # -------------------------------
+    # Default args to use for install
+    # -------------------------------
+
+    args.relay_name = "my_relay"
+    args.relay_pubkey = "07adfda9c5adc80881bb2a5220f6e3181e0c043b90fa115c4f183464022968e6"
