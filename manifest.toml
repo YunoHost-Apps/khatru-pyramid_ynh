@@ -45,12 +45,9 @@ ram.runtime = "50M"
 [resources]
 
     [resources.sources.main]
-    extract = false
-    rename = "khatru-pyramid"
-    amd64.url = "https://github.com/github-tijlxyz/khatru-pyramid/releases/download/v0.1.0/khatru-pyramid-v0.1.0-linux-amd64"
-    amd64.sha256 = "a02ddd2dda94ab7c3b119541decfd7dee02a064674f9db8277239d0ad9e75013"
+    url = "https://github.com/github-tijlxyz/khatru-pyramid/archive/refs/tags/v0.1.0.tar.gz"
+    sha256 = "de33acc2d224ac8824a61f1b6a9deed382321e26804de9a4397800033092a5e1"
 
-    autoupdate.asset.amd64 = "^khatru-pyramid-v.*-linux-amd64$"
     autoupdate.strategy = "latest_github_release"
 
     [resources.system_user]
