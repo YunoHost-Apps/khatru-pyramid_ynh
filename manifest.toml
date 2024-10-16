@@ -13,7 +13,8 @@ license = "Unlicense"
 code = "https://github.com/github-tijlxyz/khatru-pyramid"
 
 [integration]
-yunohost = ">= 11.2"
+yunohost = ">= 11.2.18"
+helpers_version = "2.1"
 architectures = [
     "amd64",
 ]

@@ -7,24 +7,23 @@ relay_description=""
 relay_contact=""
 relay_icon=""
 
-ynh_app_setting_set --app="$app" --key=relay_maxinvites --value="$relay_maxinvites"
-ynh_app_setting_set --app="$app" --key=relay_description --value="$relay_description"
-ynh_app_setting_set --app="$app" --key=relay_contact --value="$relay_contact"
-ynh_app_setting_set --app="$app" --key=relay_icon --value="$relay_icon"
+ynh_app_setting_set --key=relay_maxinvites --value="$relay_maxinvites"
+ynh_app_setting_set --key=relay_description --value="$relay_description"
+ynh_app_setting_set --key=relay_contact --value="$relay_contact"
+ynh_app_setting_set --key=relay_icon --value="$relay_icon"
 
-ynh_script_progression --message="Setting up source files..." --weight=1
-ynh_setup_source --dest_dir="$install_dir" 
-chown -R $app:$app $install_dir
-chmod -R 700 $install_dir
+ynh_script_progression "Setting up source files..."
+ynh_setup_source --dest_dir="$install_dir"
 
-ynh_script_progression --message="Adding $app's configuration files..." --weight=1
-ynh_add_config --template='khatru-pyramid.env' --destination="$install_dir/khatru-pyramid.env"
+#REMOVEME? Assuming the install dir is setup using ynh_setup_source, the proper chmod/chowns are now already applied and it shouldn't be necessary to tweak perms | chown -R $app:$app $install_dir
+#REMOVEME? Assuming the install dir is setup using ynh_setup_source, the proper chmod/chowns are now already applied and it shouldn't be necessary to tweak perms | chmod -R 700 $install_dir
+ynh_script_progression "Adding $app's configuration files..."
+ynh_config_add --template='khatru-pyramid.env' --destination="$install_dir/khatru-pyramid.env"
 
-ynh_script_progression --message="Add system configurations" --weight=1
-ynh_add_nginx_config
-ynh_add_systemd_config
+ynh_script_progression "Add system configurations"
+ynh_config_add_nginx
+ynh_config_add_systemd
 yunohost service add "$app" --description="Khatru Pyramid" --log="/var/log/$app/$app.log"
 
-ynh_script_progression --message="Starting $app's systemd service..." --weight=1
-ynh_systemd_action --service_name="$app" --action="start" --log_path="/var/log/$app/$app.log"
-
+ynh_script_progression "Starting $app's systemd service..."
+ynh_systemctl --service="$app" --action="start"
