@@ -1,6 +1,15 @@
 #!/bin/bash
 
+#=================================================
+# IMPORT GENERIC HELPERS
+#=================================================
+
+source _common.sh
 source /usr/share/yunohost/helpers
+
+#=================================================
+# INITIALIZE AND STORE SETTINGS
+#=================================================
 
 relay_maxinvites="3"
 relay_description=""
@@ -12,18 +21,40 @@ ynh_app_setting_set --key=relay_description --value="$relay_description"
 ynh_app_setting_set --key=relay_contact --value="$relay_contact"
 ynh_app_setting_set --key=relay_icon --value="$relay_icon"
 
+#=================================================
+# DOWNLOAD, CHECK AND UNPACK SOURCE
+#=================================================
 ynh_script_progression "Setting up source files..."
+
 ynh_setup_source --dest_dir="$install_dir"
 
-#REMOVEME? Assuming the install dir is setup using ynh_setup_source, the proper chmod/chowns are now already applied and it shouldn't be necessary to tweak perms | chown -R $app:$app $install_dir
-#REMOVEME? Assuming the install dir is setup using ynh_setup_source, the proper chmod/chowns are now already applied and it shouldn't be necessary to tweak perms | chmod -R 700 $install_dir
+#=================================================
+# APP INITIAL CONFIGURATION
+#=================================================
 ynh_script_progression "Adding $app's configuration files..."
+
 ynh_config_add --template='khatru-pyramid.env' --destination="$install_dir/khatru-pyramid.env"
 
-ynh_script_progression "Add system configurations"
+#=================================================
+# SYSTEM CONFIGURATION
+#=================================================
+ynh_script_progression "Adding system configurations related to $app..."
+
 ynh_config_add_nginx
+
 ynh_config_add_systemd
+
 yunohost service add "$app" --description="Khatru Pyramid" --log="/var/log/$app/$app.log"
 
+#=================================================
+# START SYSTEMD SERVICE
+#=================================================
 ynh_script_progression "Starting $app's systemd service..."
+
 ynh_systemctl --service="$app" --action="start"
+
+#=================================================
+# END OF SCRIPT
+#=================================================
+
+ynh_script_progression "Installation of $app completed"
