@@ -14,7 +14,6 @@ Group=__APP__
 EnvironmentFile=__INSTALL_DIR__/khatru-pyramid.env
 WorkingDirectory=__INSTALL_DIR__/
 ExecStart=__INSTALL_DIR__/khatru-pyramid
-#Environment=USER=__APP__ HOME=__DATA_DIR__
 Restart=on-failure
 
 # Sandboxing options to harden security
