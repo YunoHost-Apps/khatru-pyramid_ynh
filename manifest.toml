@@ -16,7 +16,7 @@ code = "https://github.com/github-tijlxyz/khatru-pyramid"
 [integration]
 yunohost = ">= 11.2.30"
 helpers_version = "2.1"
-architectures = [ "amd64" ]
+architectures = "all"
 multi_instance = false
 ldap = false
 sso = false
@@ -38,8 +38,8 @@ ram.runtime = "50M"
     type = "string"
 
     [install.relay_pubkey]
-    ask.en = "Pubkey for the relay (your nostr hex pubkey)"
-    ask.en = "Clé publique pour le relais (votre clé publique hexadécimale Nostr)"
+    ask.en = "Pubkey for the relay (your Nostr hex pubkey)"
+    ask.fr = "Clé publique pour le relais (votre clé publique hexadécimale Nostr)"
     type = "string"
 
 [resources]
