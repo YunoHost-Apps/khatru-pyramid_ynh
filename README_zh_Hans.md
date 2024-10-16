@@ -3,9 +3,9 @@
 请勿手动编辑。
 -->
 
-# YunoHost 的 Khatru Pyramid
+# YunoHost 上的 Khatru Pyramid
 
-[![集成程度](https://dash.yunohost.org/integration/khatru-pyramid.svg)](https://dash.yunohost.org/appci/app/khatru-pyramid) ![工作状态](https://ci-apps.yunohost.org/ci/badges/khatru-pyramid.status.svg) ![维护状态](https://ci-apps.yunohost.org/ci/badges/khatru-pyramid.maintain.svg)
+[![集成程度](https://dash.yunohost.org/integration/khatru-pyramid.svg)](https://ci-apps.yunohost.org/ci/apps/khatru-pyramid/) ![工作状态](https://ci-apps.yunohost.org/ci/badges/khatru-pyramid.status.svg) ![维护状态](https://ci-apps.yunohost.org/ci/badges/khatru-pyramid.maintain.svg)
 
 [![使用 YunoHost 安装 Khatru Pyramid](https://install-app.yunohost.org/install-with-yunohost.svg)](https://install-app.yunohost.org/?app=khatru-pyramid)
 
@@ -15,8 +15,6 @@
 > *如果您还没有 YunoHost，请参阅[指南](https://yunohost.org/install)了解如何安装它。*
 
 ## 概况
-
-# Khatru Pyramid
 
 A [nostr](https://github.com/nostr-protocol/nostr) relay with a invite hierarchy.
 

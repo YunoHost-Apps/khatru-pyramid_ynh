@@ -5,7 +5,7 @@ Il NE doit PAS être modifié à la main.
 
 # Khatru Pyramid pour YunoHost
 
-[![Niveau d’intégration](https://dash.yunohost.org/integration/khatru-pyramid.svg)](https://dash.yunohost.org/appci/app/khatru-pyramid) ![Statut du fonctionnement](https://ci-apps.yunohost.org/ci/badges/khatru-pyramid.status.svg) ![Statut de maintenance](https://ci-apps.yunohost.org/ci/badges/khatru-pyramid.maintain.svg)
+[![Niveau d’intégration](https://dash.yunohost.org/integration/khatru-pyramid.svg)](https://ci-apps.yunohost.org/ci/apps/khatru-pyramid/) ![Statut du fonctionnement](https://ci-apps.yunohost.org/ci/badges/khatru-pyramid.status.svg) ![Statut de maintenance](https://ci-apps.yunohost.org/ci/badges/khatru-pyramid.maintain.svg)
 
 [![Installer Khatru Pyramid avec YunoHost](https://install-app.yunohost.org/install-with-yunohost.svg)](https://install-app.yunohost.org/?app=khatru-pyramid)
 
@@ -15,8 +15,6 @@ Il NE doit PAS être modifié à la main.
 > *Si vous n’avez pas YunoHost, consultez [ce guide](https://yunohost.org/install) pour savoir comment l’installer et en profiter.*
 
 ## Vue d’ensemble
-
-# Khatru Pyramid
 
 A [nostr](https://github.com/nostr-protocol/nostr) relay with a invite hierarchy.
 
