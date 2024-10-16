@@ -20,7 +20,7 @@ A [nostr](https://github.com/nostr-protocol/nostr) relay with a invite hierarchy
 
 
 
-**Versi terkirim:** 0.0.5~ynh1
+**Versi terkirim:** 0.1.0~ynh1
 ## Dokumentasi dan sumber daya
 
 - Depot kode aplikasi hulu: <https://github.com/github-tijlxyz/khatru-pyramid>
