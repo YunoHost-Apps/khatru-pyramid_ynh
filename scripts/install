@@ -31,7 +31,7 @@ chmod +x $install_dir/khatru-pyramid
 #=================================================
 ynh_script_progression "Adding $app's configuration files..."
 
-ynh_config_add --template='khatru-pyramid.env' --destination="$install_dir/khatru-pyramid.env"
+ynh_config_add --template='.env' --destination="$install_dir/.env"
 
 #=================================================
 # SYSTEM CONFIGURATION

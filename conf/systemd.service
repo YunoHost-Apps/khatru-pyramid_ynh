@@ -1,8 +1,3 @@
-# xecStart=__INSTALL_DIR__/khatru-pyramid
-# Restart=always
-# Environment=USER=__APP__ HOME=/home/yunohost.app/__APP__
-# EnvironmentFile=__INSTALL_DIR__/khatru-pyramid.env
-
 [Unit]
 Description=Khatru Pyramid
 After=network.target nginx.service
@@ -11,7 +6,7 @@ After=network.target nginx.service
 Type=exec
 User=__APP__
 Group=__APP__
-EnvironmentFile=__INSTALL_DIR__/khatru-pyramid.env
+EnvironmentFile=__INSTALL_DIR__/.env
 WorkingDirectory=__INSTALL_DIR__/
 ExecStart=__INSTALL_DIR__/khatru-pyramid
 Restart=on-failure
