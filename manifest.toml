@@ -5,7 +5,7 @@ name = "Khatru Pyramid"
 description.en = "Nostr invite relay"
 description.fr = "Nostr relais d'invitation"
 
-version = "0.2.0~ynh1"
+version = "0.2.1~ynh1"
 
 maintainers = ["tijlxyz"]
 
@@ -47,8 +47,8 @@ ram.runtime = "50M"
     [resources.sources.main]
     extract = false
     rename = "khatru-pyramid"
-    amd64.url = "https://github.com/github-tijlxyz/khatru-pyramid/releases/download/v0.2.0/khatru-pyramid-v0.2.0-linux-amd64"
-    amd64.sha256 = "82cbf4793767de5b1adc4b8b297c505eb3d5438539595ce45f4fd3e19149529f"
+    amd64.url = "https://github.com/github-tijlxyz/khatru-pyramid/releases/download/v0.2.1/khatru-pyramid-v0.2.1-linux-amd64"
+    amd64.sha256 = "2b8f18fde147fa784e0e6a60024f2f98747eb7e7b169991dc94b27d9d3a099d2"
 
     autoupdate.asset.amd64 = "^khatru-pyramid-v.*-linux-amd64$"
     autoupdate.strategy = "latest_github_release"
