@@ -5,7 +5,9 @@ Ini TIDAK boleh diedit dengan tangan.
 
 # Khatru Pyramid untuk YunoHost
 
-[![Tingkat integrasi](https://dash.yunohost.org/integration/khatru-pyramid.svg)](https://ci-apps.yunohost.org/ci/apps/khatru-pyramid/) ![Status kerja](https://ci-apps.yunohost.org/ci/badges/khatru-pyramid.status.svg) ![Status pemeliharaan](https://ci-apps.yunohost.org/ci/badges/khatru-pyramid.maintain.svg)
+[![Tingkat integrasi](https://apps.yunohost.org/badge/integration/khatru-pyramid)](https://ci-apps.yunohost.org/ci/apps/khatru-pyramid/)
+![Status kerja](https://apps.yunohost.org/badge/state/khatru-pyramid)
+![Status pemeliharaan](https://apps.yunohost.org/badge/maintained/khatru-pyramid)
 
 [![Pasang Khatru Pyramid dengan YunoHost](https://install-app.yunohost.org/install-with-yunohost.svg)](https://install-app.yunohost.org/?app=khatru-pyramid)
 
@@ -20,7 +22,7 @@ A [nostr](https://github.com/nostr-protocol/nostr) relay with a invite hierarchy
 
 
 
-**Versi terkirim:** 0.2.1~ynh1
+**Versi terkirim:** 0.2.2~ynh1
 ## Dokumentasi dan sumber daya
 
 - Depot kode aplikasi hulu: <https://github.com/github-tijlxyz/khatru-pyramid>

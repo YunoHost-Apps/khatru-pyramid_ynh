@@ -5,7 +5,9 @@ Hij mag NIET handmatig aangepast worden.
 
 # Khatru Pyramid voor Yunohost
 
-[![Integratieniveau](https://dash.yunohost.org/integration/khatru-pyramid.svg)](https://ci-apps.yunohost.org/ci/apps/khatru-pyramid/) ![Mate van functioneren](https://ci-apps.yunohost.org/ci/badges/khatru-pyramid.status.svg) ![Onderhoudsstatus](https://ci-apps.yunohost.org/ci/badges/khatru-pyramid.maintain.svg)
+[![Integratieniveau](https://apps.yunohost.org/badge/integration/khatru-pyramid)](https://ci-apps.yunohost.org/ci/apps/khatru-pyramid/)
+![Mate van functioneren](https://apps.yunohost.org/badge/state/khatru-pyramid)
+![Onderhoudsstatus](https://apps.yunohost.org/badge/maintained/khatru-pyramid)
 
 [![Khatru Pyramid met Yunohost installeren](https://install-app.yunohost.org/install-with-yunohost.svg)](https://install-app.yunohost.org/?app=khatru-pyramid)
 
@@ -20,7 +22,7 @@ A [nostr](https://github.com/nostr-protocol/nostr) relay with a invite hierarchy
 
 
 
-**Geleverde versie:** 0.2.1~ynh1
+**Geleverde versie:** 0.2.2~ynh1
 ## Documentatie en bronnen
 
 - Upstream app codedepot: <https://github.com/github-tijlxyz/khatru-pyramid>
