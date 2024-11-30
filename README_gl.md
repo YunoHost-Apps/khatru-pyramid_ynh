@@ -5,7 +5,9 @@ NON debe editarse manualmente.
 
 # Khatru Pyramid para YunoHost
 
-[![Nivel de integración](https://dash.yunohost.org/integration/khatru-pyramid.svg)](https://ci-apps.yunohost.org/ci/apps/khatru-pyramid/) ![Estado de funcionamento](https://ci-apps.yunohost.org/ci/badges/khatru-pyramid.status.svg) ![Estado de mantemento](https://ci-apps.yunohost.org/ci/badges/khatru-pyramid.maintain.svg)
+[![Nivel de integración](https://apps.yunohost.org/badge/integration/khatru-pyramid)](https://ci-apps.yunohost.org/ci/apps/khatru-pyramid/)
+![Estado de funcionamento](https://apps.yunohost.org/badge/state/khatru-pyramid)
+![Estado de mantemento](https://apps.yunohost.org/badge/maintained/khatru-pyramid)
 
 [![Instalar Khatru Pyramid con YunoHost](https://install-app.yunohost.org/install-with-yunohost.svg)](https://install-app.yunohost.org/?app=khatru-pyramid)
 
@@ -20,7 +22,7 @@ A [nostr](https://github.com/nostr-protocol/nostr) relay with a invite hierarchy
 
 
 
-**Versión proporcionada:** 0.2.1~ynh1
+**Versión proporcionada:** 0.2.2~ynh1
 ## Documentación e recursos
 
 - Repositorio de orixe do código: <https://github.com/github-tijlxyz/khatru-pyramid>

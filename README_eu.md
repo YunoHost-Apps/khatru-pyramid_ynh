@@ -5,7 +5,9 @@ EZ editatu eskuz.
 
 # Khatru Pyramid YunoHost-erako
 
-[![Integrazio maila](https://dash.yunohost.org/integration/khatru-pyramid.svg)](https://ci-apps.yunohost.org/ci/apps/khatru-pyramid/) ![Funtzionamendu egoera](https://ci-apps.yunohost.org/ci/badges/khatru-pyramid.status.svg) ![Mantentze egoera](https://ci-apps.yunohost.org/ci/badges/khatru-pyramid.maintain.svg)
+[![Integrazio maila](https://apps.yunohost.org/badge/integration/khatru-pyramid)](https://ci-apps.yunohost.org/ci/apps/khatru-pyramid/)
+![Funtzionamendu egoera](https://apps.yunohost.org/badge/state/khatru-pyramid)
+![Mantentze egoera](https://apps.yunohost.org/badge/maintained/khatru-pyramid)
 
 [![Instalatu Khatru Pyramid YunoHost-ekin](https://install-app.yunohost.org/install-with-yunohost.svg)](https://install-app.yunohost.org/?app=khatru-pyramid)
 
@@ -20,7 +22,7 @@ A [nostr](https://github.com/nostr-protocol/nostr) relay with a invite hierarchy
 
 
 
-**Paketatutako bertsioa:** 0.2.1~ynh1
+**Paketatutako bertsioa:** 0.2.2~ynh1
 ## Dokumentazioa eta baliabideak
 
 - Jatorrizko aplikazioaren kode-gordailua: <https://github.com/github-tijlxyz/khatru-pyramid>
