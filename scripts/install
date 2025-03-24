@@ -48,7 +48,7 @@ ynh_config_add_nginx
 
 # Create a dedicated systemd config
 ynh_config_add_systemd
-yunohost service add "$app" --description="Khatru Pyramid" --log="/var/log/$app/$app.log"
+yunohost service add "$app" --description="Khatru Pyramid" --log="systemd"
 
 #=================================================
 # START SYSTEMD SERVICE
@@ -56,7 +56,7 @@ yunohost service add "$app" --description="Khatru Pyramid" --log="/var/log/$app/
 ynh_script_progression "Starting $app's systemd service..."
 
 # Start a systemd service
-ynh_systemctl --service="$app" --action="start"
+ynh_systemctl --service="$app" --action="start" --wait_until="running on" --log_path="systemd"
 
 #=================================================
 # END OF SCRIPT

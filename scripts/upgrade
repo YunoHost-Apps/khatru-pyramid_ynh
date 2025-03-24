@@ -15,6 +15,17 @@ ynh_script_progression "Stopping $app's systemd service..."
 ynh_systemctl --service="$app" --action="stop"
 
 #=================================================
+# ENSURE DOWNWARD COMPATIBILITY
+#=================================================
+ynh_script_progression "Ensuring downward compatibility..."
+
+if [ -d "$install_dir/db" ]; then
+	mv "$install_dir/db/data.mdb" "$data_dir/data.mdb"
+	mv "$install_dir/db/lock.mdb" "$data_dir/lock.mdb"
+	ynh_safe_rm "$install_dir/db"
+fi
+
+#=================================================
 # DOWNLOAD, CHECK AND UNPACK SOURCE
 #=================================================
 ynh_script_progression "Upgrading source files..."
@@ -25,6 +36,13 @@ ynh_setup_source --dest_dir="$install_dir" --full_replace --keep=".env"
 chmod +x $install_dir/khatru-pyramid
 
 #=================================================
+# UPDATE A CONFIG FILE
+#=================================================
+ynh_script_progression "Updating $app's configuration files..."
+
+ynh_config_add --template='.env' --destination="$install_dir/.env"
+
+#=================================================
 # REAPPLY SYSTEM CONFIGURATION
 #=================================================
 ynh_script_progression "Upgrading system configurations related to $app..."
@@ -32,14 +50,14 @@ ynh_script_progression "Upgrading system configurations related to $app..."
 ynh_config_add_nginx
 
 ynh_config_add_systemd
-yunohost service add "$app" --description="Khatru Pyramid" --log="/var/log/$app/$app.log"
+yunohost service add "$app" --description="Khatru Pyramid" --log="systemd"
 
 #=================================================
 # START SYSTEMD SERVICE
 #=================================================
 ynh_script_progression "Starting $app's systemd service..."
 
-ynh_systemctl --service="$app" --action="start"
+ynh_systemctl --service="$app" --action="start" --wait_until="running on" --log_path="systemd"
 
 #=================================================
 # END OF SCRIPT
