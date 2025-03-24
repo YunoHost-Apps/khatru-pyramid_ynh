@@ -20,8 +20,8 @@ Ini TIDAK boleh diedit dengan tangan.
 
 A [nostr](https://github.com/nostr-protocol/nostr) relay with a invite hierarchy.
 
-**Versi terkirim:** 0.2.2~ynh1
 
+**Versi terkirim:** 0.2.2~ynh2
 ## Dokumentasi dan sumber daya
 
 - Depot kode aplikasi hulu: <https://github.com/github-tijlxyz/khatru-pyramid>

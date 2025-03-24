@@ -20,8 +20,8 @@ NON debe editarse manualmente.
 
 A [nostr](https://github.com/nostr-protocol/nostr) relay with a invite hierarchy.
 
-**Versión proporcionada:** 0.2.2~ynh1
 
+**Versión proporcionada:** 0.2.2~ynh2
 ## Documentación e recursos
 
 - Repositorio de orixe do código: <https://github.com/github-tijlxyz/khatru-pyramid>

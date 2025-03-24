@@ -21,8 +21,7 @@ Nie powinno być ono edytowane ręcznie.
 A [nostr](https://github.com/nostr-protocol/nostr) relay with a invite hierarchy.
 
 
-
-**Dostarczona wersja:** 0.2.2~ynh1
+**Dostarczona wersja:** 0.2.2~ynh2
 ## Dokumentacja i zasoby
 
 - Repozytorium z kodem źródłowym: <https://github.com/github-tijlxyz/khatru-pyramid>

@@ -20,8 +20,8 @@
 
 A [nostr](https://github.com/nostr-protocol/nostr) relay with a invite hierarchy.
 
-**Поставляемая версия:** 0.2.2~ynh1
 
+**Поставляемая версия:** 0.2.2~ynh2
 ## Документация и ресурсы
 
 - Репозиторий кода главной ветки приложения: <https://github.com/github-tijlxyz/khatru-pyramid>

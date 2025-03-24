@@ -20,8 +20,8 @@ Hij mag NIET handmatig aangepast worden.
 
 A [nostr](https://github.com/nostr-protocol/nostr) relay with a invite hierarchy.
 
-**Geleverde versie:** 0.2.2~ynh1
 
+**Geleverde versie:** 0.2.2~ynh2
 ## Documentatie en bronnen
 
 - Upstream app codedepot: <https://github.com/github-tijlxyz/khatru-pyramid>
