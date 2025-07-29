@@ -50,8 +50,8 @@ ram.runtime = "50M"
     amd64.url = "https://github.com/github-tijlxyz/khatru-pyramid/releases/download/v0.2.2/khatru-pyramid-v0.2.2-linux-amd64"
     amd64.sha256 = "e5784abc42be5e9a0b43cfd93414b6c09ea526b6fd5dfe6692d4ae6d5afb97b5"
 
-    autoupdate.asset.amd64 = "^khatru-pyramid-v.*-linux-amd64$"
-    autoupdate.strategy = "latest_github_release"
+    # autoupdate.asset.amd64 = "^khatru-pyramid-v.*-linux-amd64$"
+    # autoupdate.strategy = "latest_github_release"
 
     [resources.system_user]
 
